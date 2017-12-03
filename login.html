@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="icon" href="img/thinco.png" type="image/png" sizes="16x16">
+
+    <!-- bootstrap -->
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- end bootstrap -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/4.7.0/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyDiPbjfOwfMK7QFEEgcm6f92suOAkOnw40",
+        authDomain: "fandog-2e605.firebaseapp.com",
+        databaseURL: "https://fandog-2e605.firebaseio.com",
+        projectId: "fandog-2e605",
+        storageBucket: "fandog-2e605.appspot.com",
+        messagingSenderId: "143602636931"
+      };
+      firebase.initializeApp(config);
+    </script>
+    <!-- End Firebase -->
+    <link rel="stylesheet" href="css/master.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="js/login.js"></script>
+    <title>Fandog - Sistema de Control</title>
+  </head>
+  <body>
+    <div class="formularioLogin">
+      <img id="logoThinco" class="w3-animate-fading" src="img/thinco.png" alt="LogoThinco">
+      <!-- Formulario de login -->
+      <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+        <input id="email" type="email" class="form-control" name="email" placeholder="Email" minLengh="5" maxlength="40">
+      </div>
+      <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+        <input id="password" type="password" class="form-control" name="password" placeholder="Password" minLengh="5" maxlength="40">
+      </div>
+      <button id="btnLogin" type="button" class="btn btn-success">Ingresar al sistema</button>
+      <button id="btnReset" type="button" class="btn btn-info">Perdi mi contraseña</button>
+      <!-- Fin Formulario -->
+
+    </div>
+
+  </body>
+</html>

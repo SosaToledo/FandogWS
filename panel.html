@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <!-- bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+  <!-- end bootstrap -->
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/4.7.0/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyDiPbjfOwfMK7QFEEgcm6f92suOAkOnw40",
+      authDomain: "fandog-2e605.firebaseapp.com",
+      databaseURL: "https://fandog-2e605.firebaseio.com",
+      projectId: "fandog-2e605",
+      storageBucket: "fandog-2e605.appspot.com",
+      messagingSenderId: "143602636931"
+    };
+    firebase.initializeApp(config);
+  </script>
+  <!-- End Firebase -->
+  <link rel="stylesheet" href="css/master.css">
+  <script src="js/panel.js"></script>
+  <head>
+    <meta charset="utf-8">
+    <title>Fandog - Panel de administrador</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  </head>
+  <body>
+    <div class="panel">
+      <h1 class="tituloPanel">Datos desde firebase</h1>
+      <button type="button" id="btnLogout" class="btn btn-success">Salir</button>
+      <table class="table table-sm table-dark table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Apellido</th>
+            <th scope="col">Categoria</th>
+          </tr>
+        </thead>
+        <tbody id="tablaVendedores" >
+        </tbody>
+      </table>
+    </div><!--End panel-->
+  </body>
+</html>
