@@ -1,23 +1,27 @@
 window.onload=iniciar;
-var refvendedores;
+var reffandog;
 var tablaVendedores;
+var diferencia;
 
 function iniciar() {
   document.getElementById("btnLogout").addEventListener('click',signOut,false);
+  diferencia = document.getElementById('diferencia');
   tablaVendedores = document.getElementById("tablaVendedores");
   firebase.auth().onAuthStateChanged(function(user){
     if (user == null ){
       location.href ="login.html";
     }else {
-      if (!user.email.localeCompare("frank_Toledo_009@hotmail.com")) {
-        alert("no tenes permisos para ver esto");
-        location.href ="login.html";
-      }
+      // if (!user.email.localeCompare("frank_Toledo_009@hotmail.com")) {
+      //   alert("no tenes permisos para ver esto");
+      //   location.href ="login.html";
+      // }
       console.log(user);
     }
   });
-  refvendedores=firebase.database().ref().child("vendedores");
-  llenarTabla();
+  reffandog=firebase.database().ref().child('fandog').child('id');
+  reffandog.on('value', snap =>
+    cargarInformes(snap.val())
+  );
 
 }
 function signOut(){
@@ -25,17 +29,9 @@ function signOut(){
   firebase.auth().signOut();
   }
 }
-function llenarTabla(){
-  refvendedores.on("value",function(snap){
-    var datos=snap.val();
-    var filas='';
-    for(var clave in datos){
-      filas+= "<tr>" +
-              "<td>" + datos[clave].nombre + "</td>" +
-              "<td>" + datos[clave].apellido + "</td>" +
-              "<td>" + datos[clave].categoria + "</td>" +
-              "</tr>";
-    }
-    tablaVendedores.innerHTML = filas;
-  });
+function cargarInformes(snap){
+  diferencia.innerText = snap.caja;
+  vTotales.innerText = snap.s_ventas;
+  vUnidad.innerText = snap.s_vendidos;
+
 }

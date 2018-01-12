@@ -30,22 +30,22 @@
       } else {
         var email = document.getElementById('email').value;
         var password = document.getElementById('password').value;
-        if (email.length < 4) {
-          alert('Ingrese un correo mas largo.');
-          return;
-        }
-        if ( !email.includes("@") ){
-          alert("Ingrese un correo valido");
-          return;
-        }
-        if ( !email.includes(".com") ){
-          alert("Ingrese un correo valido");
-          return;
-        }
-        if (password.length < 4) {
-          alert('Ingrese su password mas largo.');
-          return;
-        }
+        // if (email.length < 4) {
+        //   alert('Ingrese un correo mas largo.');
+        //   return;
+        // }
+        // if ( !email.includes("@") ){
+        //   alert("Ingrese un correo valido");
+        //   return;
+        // }
+        // if ( !email.includes(".com") ){
+        //   alert("Ingrese un correo valido");
+        //   return;
+        // }
+        // if (password.length < 4) {
+        //   alert('Ingrese su password mas largo.');
+        //   return;
+        // }
         // Sign in with email and pass.
         // [START authwithemail]
         firebase.auth().signInWithEmailAndPassword(email, password)

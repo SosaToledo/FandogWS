@@ -15,19 +15,8 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
     <!-- Firebase -->
-    <script src="https://www.gstatic.com/firebasejs/4.7.0/firebase.js"></script>
-    <script>
-      // Initialize Firebase
-      var config = {
-        apiKey: "AIzaSyDiPbjfOwfMK7QFEEgcm6f92suOAkOnw40",
-        authDomain: "fandog-2e605.firebaseapp.com",
-        databaseURL: "https://fandog-2e605.firebaseio.com",
-        projectId: "fandog-2e605",
-        storageBucket: "fandog-2e605.appspot.com",
-        messagingSenderId: "143602636931"
-      };
-      firebase.initializeApp(config);
-    </script>
+    <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+    <script src="js/app.js"></script>
     <!-- End Firebase -->
     <link rel="stylesheet" href="css/master.css">
     <meta charset="utf-8">
@@ -36,22 +25,18 @@
     <title>Fandog - Sistema de Control</title>
   </head>
   <body>
-    <div class="formularioLogin">
+    <form class="formularioLogin" action="index.html" method="post">
       <img id="logoThinco" class="w3-animate-fading" src="img/thinco.png" alt="LogoThinco">
-      <!-- Formulario de login -->
       <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-        <input id="email" type="email" class="form-control" name="email" placeholder="Email" minLengh="5" maxlength="40">
+        <input id="email" type="email" class="form-control" name="email" placeholder="Email" minLengh="5" maxlength="40" required>
       </div>
       <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
         <input id="password" type="password" class="form-control" name="password" placeholder="Password" minLengh="5" maxlength="40">
       </div>
-      <button id="btnLogin" type="button" class="btn btn-success">Ingresar al sistema</button>
-      <button id="btnReset" type="button" class="btn btn-info">Perdi mi contraseña</button>
-      <!-- Fin Formulario -->
-
-    </div>
-
+        <button id="btnLogin" type="button" class="btn btn-success">Ingresar al sistema</button>
+        <button id="btnReset" type="button" class="btn btn-info">Perdi mi contraseña</button>
+    </form>
   </body>
 </html>
