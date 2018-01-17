@@ -52,22 +52,33 @@
 
 
       </div>
-      <!-- tabla de unidades vendidas -->
+      <!-- tabla de ventas por unidades  -->
       <h1>Ventas por producto</h1>
       <table class="table table-border">
         <thead>
           <tr>
+            <th scope="col">#</th>
             <th scope="col">Salchichas</th>
             <th scope="col">Panes</th>
             <th scope="col">Gaseosas</th>
           </tr>
         </thead>
         <tbody>
-          <td id="cantSal">$0</td>
-          <td id="cantPan">0</td>
-          <td id="cantGas">$0</td>
+          <tr>
+            <th scope="row">En unidades</th>
+            <td id="uniSal">0</td>
+            <td id="uniPan">0</td>
+            <td id="uniGas">0</td>
+          </tr>
+          <tr>
+            <th scope="row">En pesos</th>
+            <td id="cantSal">$0</td>
+            <td id="cantPan">$0</td>
+            <td id="cantGas">$0</td>
+          </tr>
         </tbody>
       </table>
+
       <!-- Informes por empleado -->
       <h1>Informes por Empleado</h1>
       <div class="d-flex justify-content-around">
@@ -92,9 +103,9 @@
             <h4 class="card-title">Ventas</h4>
             <p id="ventasFrankToledo" class="card-text">$0</p>
             <h4 class="card-title">Comision</h4>
-            <p id="comLucianoSosa">$0</p>
+            <p id="comFrankToledo">$0</p>
             <h4 class="card-title">Diferencias de caja</h4>
-            <p id="difLucianoSosa">$0</p>
+            <p id="difFrankToledo">$0</p>
           </div>
         </div>
         <div class="card">
@@ -105,9 +116,9 @@
             <h4 class="card-title">Ventas</h4>
             <p id="ventasThinco" class="card-text">$0</p>
             <h4 class="card-title">Comision</h4>
-            <p id="comLucianoSosa">$0</p>
+            <p id="comThinco">$0</p>
             <h4 class="card-title">Diferencias de caja</h4>
-            <p id="difLucianoSosa">$0</p>
+            <p id="difThinco">$0</p>
           </div>
         </div>
       </div>

@@ -83,24 +83,31 @@ function cargarInformes(){
 }
 
 function cargarEmpleados() {
-  var ls = document.getElementById("ventasLucianoSosa");
-  var cls = document.getElementById("comLucianoSosa");
-  var dls = document.getElementById("difLucianoSosa")
-  ls.innerText ="$ "+ vtaLSosa;
+  // Luciano Sosa
+  // --ventas
+  document.getElementById("ventasLucianoSosa").innerText ="$ "+ vtaLSosa;
+  // --comision
   var comLS = vtaLSosa * 0.1;
-  cls.innerText = "$ "+ comLS;
-  dls.innerText = "$ "+difLSosa;
+  document.getElementById("comLucianoSosa").innerText = "$ "+ comLS;
+  // --diferencia
+  document.getElementById("difLucianoSosa").innerText = "$ "+difLSosa;
+  // --------------------
+  // Frank Toledo
   var ft = document.getElementById("ventasFrankToledo");
+  document.getElementById('comFrankToledo').innerText = vtaFToledo *0.1;
   ft.innerText = "$ "+ vtaFToledo;
   var ct = document.getElementById("ventasThinco");
   ct.innerText = "$ "+vtaCThinco;
 }
 function cargarTabla() {
+  // carga de ventas en unidades
+  document.getElementById('uniSal').innerText = sal;
+  document.getElementById('uniPan').innerText = pan;
+  document.getElementById('uniGas').innerText = gas;
+  // carga de ventas en dinero
   var tdSal = document.getElementById('cantSal');
   sal *=50;
   tdSal.innerText="$ "+sal;
-  var tdPan = document.getElementById('cantPan');
-  tdPan.innerText=pan;
   var tdGas = document.getElementById('cantGas');
   gas*=30
   tdGas.innerText="$ "+ gas;
