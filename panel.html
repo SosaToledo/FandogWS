@@ -15,6 +15,7 @@
   <!-- End w3.css -->
   <link rel="stylesheet" href="css/master.css">
   <script src="js/panel.js"></script>
+
   <head>
     <meta charset="utf-8">
     <title>Fandog - Panel de administrador</title>
@@ -23,37 +24,50 @@
       .col{
           margin: 10px;
       }
+      #datepicker{
+        color: white;
+      }
+      p, h4{
+        margin: 10px;
+      }
+      table{
+        color: white;
+      }
     </style>
   </head>
   <body>
     <div class="panel">
-      <h1 class="tituloPanel">INFORMES DEL DÍA</h1>
+      <h1 class="tituloPanel">INFORMES GENERALES</h1>
       <button type="button" id="btnLogout" class="btn btn-success">Salir</button>
       <!-- comienzo de grilla -->
       <div class="container">
         <div class="row">
           <div class="card col">
             <div class="card-block">
-              <h2 class="card-title">Diferencias</h2>
-              <p class="card-text" id="diferencia"></p>
-            </div>
-          </div>
-          <div class="card col">
-            <div class="card-block">
               <h2 class="card-title">Ventas Totales</h2>
-              <p class="card-text" id="vTotales"></p>
-            </div>
-          </div>
-          <div class="card col">
-            <div class="card-block">
-              <h2 class="card-title">Ventas por unidad</h2>
-              <p class="card-text" id="vUnidad"></p>
+              <p class="card-text" id="vTotales">$0</p>
             </div>
           </div>
         </div>
+        <!-- tabla de unidades vendidas -->
+        <h1>Unidades vendidas por producto</h1>
+        <table class="table table-border">
+          <thead>
+            <tr>
+              <th scope="col">Salchichas</th>
+              <th scope="col">Panes</th>
+              <th scope="col">Gaseosas</th>
+            </tr>
+          </thead>
+          <tbody>
+            <td id="cantSal"></td>
+            <td id="cantPan"></td>
+            <td id="cantGas"></td>
+          </tbody>
+        </table>
 
       </div>
-
+      <!-- Informes por empleado -->
       <h1>Informes por Empleado</h1>
       <div class="d-flex justify-content-around">
         <div class="card">
@@ -62,9 +76,11 @@
           </div>
           <div class="card-block">
             <h4 class="card-title">Ventas</h4>
-            <p id="ventasLucianoSosa" class="card-text"></p>
+            <p id="ventasLucianoSosa" class="card-text">$0</p>
             <h4 class="card-title">Comision</h4>
-            <p id="comLucianoSosa"></p>
+            <p id="comLucianoSosa">$0</p>
+            <h4 class="card-title">Diferencias de caja</h4>
+            <p id="difLucianoSosa">$0</p>
           </div>
         </div>
         <div class="card">
@@ -73,11 +89,30 @@
           </div>
           <div class="card-block">
             <h4 class="card-title">Ventas</h4>
-            <p id="ventasFrankToledo" class="card-text"></p>
-            <p id="comFrankToledo"></p>
+            <p id="ventasFrankToledo" class="card-text">$0</p>
+            <h4 class="card-title">Comision</h4>
+            <p id="comLucianoSosa">$0</p>
+            <h4 class="card-title">Diferencias de caja</h4>
+            <p id="difLucianoSosa">$0</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            Thinco
+          </div>
+          <div class="card-block">
+            <h4 class="card-title">Ventas</h4>
+            <p id="ventasThinco" class="card-text">$0</p>
+            <h4 class="card-title">Comision</h4>
+            <p id="comLucianoSosa">$0</p>
+            <h4 class="card-title">Diferencias de caja</h4>
+            <p id="difLucianoSosa">$0</p>
           </div>
         </div>
       </div>
+
+      <!-- seleccion de dias -->
+
 
     </div><!--End panel-->
   </body>
