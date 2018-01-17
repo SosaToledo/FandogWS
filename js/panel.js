@@ -41,9 +41,9 @@ function iniciar() {
       suma = sal+gas+pan;
       cargarInformes();
       cargarTabla();
-      sal =0;
-      gas =0;
-      pan =0;
+      // sal =0;
+      // gas =0;
+      // pan =0;
     });
   reffandog.on("value", function cargarEmpleado(snap) {
     snap.forEach(function recorrer(snapChild) {
@@ -77,8 +77,8 @@ function signOut(){
 function cargarInformes(){
   // diferencia.innerText = snap.caja;
   vTotales.innerText = "$"+ventas;
-  ventas = 0;
-  suma = 0;
+  // ventas = 0;
+  // suma = 0;
 
 }
 
@@ -97,9 +97,11 @@ function cargarEmpleados() {
 }
 function cargarTabla() {
   var tdSal = document.getElementById('cantSal');
-  tdSal.innerText=sal;
+  sal *=50;
+  tdSal.innerText="$ "+sal;
   var tdPan = document.getElementById('cantPan');
   tdPan.innerText=pan;
   var tdGas = document.getElementById('cantGas');
-  tdGas.innerText=gas;
+  gas*=30
+  tdGas.innerText="$ "+ gas;
 }
