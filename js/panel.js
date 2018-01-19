@@ -31,7 +31,7 @@ function iniciar() {
     }
   });
   reffandog=firebase.database().ref().child('fandog');
-  reffandog.once('value', function sumar(snap) {
+  reffandog.on('value', function sumar(snap) {
       snap.forEach(function recorrer(childSnap) {
         sal += parseInt(childSnap.val().salVta);
         gas += parseInt(childSnap.val().gasVta);
@@ -41,9 +41,9 @@ function iniciar() {
       suma = sal+gas+pan;
       cargarInformes();
       cargarTabla();
-      // sal =0;
-      // gas =0;
-      // pan =0;
+      sal =0;
+      gas =0;
+      pan =0;
     });
   reffandog.on("value", function cargarEmpleado(snap) {
     snap.forEach(function recorrer(snapChild) {
@@ -63,10 +63,10 @@ function iniciar() {
       }
     })
     cargarEmpleados();
-    vtaLSosa =0;
-    vtaFToledo=0;
-    difCaja=0;
-    vtaCThinco=0;
+    // vtaLSosa =0;
+    // vtaFToledo=0;
+    // difCaja=0;
+    // vtaCThinco=0;
   });
 }
 function signOut(){
@@ -76,7 +76,7 @@ function signOut(){
 }
 function cargarInformes(){
   // diferencia.innerText = snap.caja;
-  vTotales.innerText = "$"+ventas;
+  vTotales.innerText = "Ventas Totales: $"+ventas;
   // ventas = 0;
   // suma = 0;
 
@@ -94,10 +94,19 @@ function cargarEmpleados() {
   // --------------------
   // Frank Toledo
   var ft = document.getElementById("ventasFrankToledo");
-  document.getElementById('comFrankToledo').innerText = vtaFToledo *0.1;
+  var comFT = vtaFToledo *0.1;
+  document.getElementById('comFrankToledo').innerText = "$ "+comFT;
   ft.innerText = "$ "+ vtaFToledo;
+  // ---------------
+  // Thinco
   var ct = document.getElementById("ventasThinco");
+  var comT = vtaCThinco *0.1;
+  document.getElementById('comThinco').innerText = "$ "+comT;
   ct.innerText = "$ "+vtaCThinco;
+  vtaCThinco = 0;
+  vtaFToledo = 0;
+  vtaLSosa = 0;
+  difLSosa = 0;
 }
 function cargarTabla() {
   // carga de ventas en unidades
